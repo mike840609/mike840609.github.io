@@ -250,8 +250,8 @@ widgets:
             Dribbble:
                 icon: fab fa-dribbble
                 url: 'https://dribbble.com'
-            RSS:
-                icon: fas fa-rss
+            Linkedin:
+                icon: fab fa-linkedin
                 url: /
     # Table of contents widget configurations
     -
