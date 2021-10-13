@@ -3,11 +3,12 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.svg
+logo: #/img/logo.svg
+    text: Mike's Blog
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/favicon.svg
+    favicon: /img/test.ico
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -111,10 +112,11 @@ navbar:
         Tags: /tags
         About: /about
     # Links to be shown on the right of the navigation bar
-    links:
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+    # links:
+    #     Download on GitHub:
+    #         icon: fab fa-github
+    #         url: 'https://github.com/ppoffice/hexo-theme-icarus'
+    
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
@@ -161,7 +163,7 @@ search:
 comment:
     type: disqus
     # Disqus shortname
-    shortname: ''
+    shortname: 'mike840609-github-io'
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 donates:
@@ -179,7 +181,7 @@ donates:
     -
         type: buymeacoffee
         # URL to the "Buy me a coffee" page
-        url: ''
+        url: 'https://www.buymeacoffee.com/mike840609'
     # Patreon donate button configurations
     -
         type: patreon
@@ -189,14 +191,14 @@ donates:
     -
         type: paypal
         # Paypal business ID or email address
-        business: ''
+        business: 'M8GPP43EN6ZCU'
         # Currency code
         currency_code: USD
     # Wechat donate button configurations
     -
         type: wechat
         # Wechat qrcode image URL
-        qrcode: ''
+        qrcode: '/img/wechat.JPG'
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 share:
@@ -223,40 +225,40 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Your name
+        author: Mike Tsai
         # Author title
-        author_title: Your title
+        author_title: Software Engineer
         # Author's current location
-        location: Your location
+        location: Taipei
         # URL or path to the avatar image
-        avatar: 
+        avatar: https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/11/16/12/homer-simpson.jpeg?w968
         # Whether show the rounded avatar image
         avatar_rounded: false
         # Email address for the Gravatar
         gravatar: 
         # URL or path for the follow button
-        follow_link: 'https://github.com/ppoffice'
+        # follow_link: 'https://github.com/ppoffice'
         # Links to be shown on the bottom of the profile widget
         social_links:
-            Github:
-                icon: fab fa-github
-                url: 'https://github.com/ppoffice'
-            Facebook:
-                icon: fab fa-facebook
-                url: 'https://facebook.com'
-            Twitter:
-                icon: fab fa-twitter
-                url: 'https://twitter.com'
-            Dribbble:
-                icon: fab fa-dribbble
-                url: 'https://dribbble.com'
             Linkedin:
                 icon: fab fa-linkedin
-                url: /
+                url: 'https://www.linkedin.com/in/mike840609/'
+            Github:
+                icon: fab fa-github
+                url: 'https://github.com/mike840609'
+            Facebook:
+                icon: fab fa-facebook
+                url: 'https://www.facebook.com/mike840609'
+            Twitter:
+                icon: fab fa-twitter
+                url: 'https://twitter.com/mike840609'
+            Telegram:
+                icon: fab fa-telegram
+                url: 'https://t.me/mike840609'
     # Table of contents widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: toc
         # Whether to show the index of each heading
         index: true
@@ -271,8 +273,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            Hexo: 'https://hexo.io'
-            Bulma: 'https://bulma.io'
+            Personal Bolg: "https://miketw.com"
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -296,32 +297,34 @@ widgets:
     # Google FeedBurner email subscription widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: subscribe_email
         # Hint text under the email input
         description: 
         # Feedburner ID
-        feedburner_id: ''
+        feedburner_id: 'github/wFqC'
     # Google AdSense unit configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
         position: left
         type: adsense
         # AdSense client ID
-        client_id: ''
+        client_id: 'ca-pub-4244469970377441'
         # AdSense AD unit ID
         slot_id: ''
     # Follow.it email subscription widget configurations
-    -
-        # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: followit
-        # Hint text under the email input
-        description: 
-        # Subscription form action URL
-        action_url: ''
-        # Feed claiming verification code
-        verification_code: ''
+    
+    # -
+    #     # Where should the widget be placed, left sidebar or right sidebar
+    #     position: right
+    #     type: followit
+    #     # Hint text under the email input
+    #     description: 
+    #     # Subscription form action URL
+    #     action_url: ''
+    #     # Feed claiming verification code
+    #     verification_code: ''
+
 # Plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
 plugins:
