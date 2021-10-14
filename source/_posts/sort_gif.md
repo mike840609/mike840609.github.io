@@ -7,6 +7,8 @@ tags:
   - Algorithm
 categories: []
 date: 2019-11-20 15:44:00
+cover: >-
+    https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2021/09/sorting-960x540.jpeg
 thumbnail: >-
     https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2021/09/sorting-960x540.jpeg
 ---

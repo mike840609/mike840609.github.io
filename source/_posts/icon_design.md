@@ -4,6 +4,7 @@ tags:
   - Icon
   - Design
 toc: true
+cover: 'https://image.freepik.com/free-vector/design-word-concept_23-2147844787.jpg'
 thumbnail: 'https://image.freepik.com/free-vector/design-word-concept_23-2147844787.jpg'
 categories: []
 date: 2020-08-02 14:50:00

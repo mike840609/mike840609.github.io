@@ -10,6 +10,7 @@ tags:
   - Api
   - Hack
 categories: []
+cover: 'gallery/mega.jpeg'
 thumbnail: 'gallery/mega.jpeg'
 date: 2021-10-13 17:11:00
 ---
