@@ -2,9 +2,8 @@
 title: {{ title }}
 date: {{ date }}
 toc: true
-
 tags: 
-
+  - test
 categories:
 
 # cover photo
