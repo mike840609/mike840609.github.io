@@ -8,7 +8,9 @@ subtitle: 'Mike Tsai 的個人部落格'
 description: 'Tech Technology Software Developer Development Mike Chun Tsai Note'
 keywords: Software, Development, 軟體工程師, 台北, mike tsai, chun tsai, yahoo, 開發, 筆記
 author: Mike Tsai 
-language: zh
+language: 
+- zh-tw
+- en
 timezone: Asia/Taipei
 
 # URL
