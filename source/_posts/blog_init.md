@@ -12,6 +12,7 @@ tags:
   - MySQL
 toc: true
 categories: []
+keywords: Keywords, 部落格, Django, 當兵, 畢業, Yahoo, 新鮮人
 cover: "https://i.imgur.com/x84rxps.jpg"
 thumbnail: "https://i.imgur.com/x84rxps.jpg"
 date: 2019-10-31 17:22:00

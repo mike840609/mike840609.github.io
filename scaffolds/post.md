@@ -15,6 +15,8 @@ thumbnail:
 # Disqus unique id 
 disqusId: some-disqus-id 
 
+keywords: Keywords
+
 # excerpt
 excerpt: 
 ---

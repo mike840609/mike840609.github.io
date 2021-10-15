@@ -7,6 +7,7 @@ tags:
   - e-commerce
   - Taobao
 categories: []
+keywords: Keywords, taobao, shopping, iphone, alibaba, china, 雙11
 cover: gallery/cover/shopping.jpeg
 thumbnail: gallery/cover/shopping.jpeg
 date: 2019-11-11 15:58:00
