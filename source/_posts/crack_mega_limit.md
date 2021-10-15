@@ -1,3 +1,4 @@
+---
 title: 解除 Mega 單日流量限制
 author: Mike Tsai
 toc: true
@@ -10,8 +11,8 @@ tags:
   - Api
   - Hack
 categories: []
-cover: 'gallery/mega.jpeg'
-thumbnail: 'gallery/mega.jpeg'
+cover: 'gallery/cover/mega.jpeg'
+thumbnail: 'gallery/cover/mega.jpeg'
 date: 2021-10-13 17:11:00
 ---
 # 解除 Mega 流量限制 (2021/04)

@@ -1,3 +1,4 @@
+---
 title: 解題常用排序演算法 (附上動圖)
 author: Mike Tsai
 toc: true

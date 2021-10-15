@@ -15,12 +15,14 @@ tags:
   - CICD
 
 categories: [] 
-cover: 'circleci.PNG'
+cover: 'gallery/cover/gcp_circleci.png'
+thumbnail: 'gallery/thumbnail/gcp_circleci.png'
 ---
 
-## 要解決問題
-事情是這樣子的，最近因為剛好有一些空閒時間，於是想要在原本部署在 Google App Enginee 的部落格進行排版的調整，並實做一些小功能，然而卻發現以前的開發，部署流程有些繁瑣，剛好工作上有接觸到 CI/CD 的概念，因此想說不如就趁此機會把也把 CI/CD 的實作應用到專案上，最終決定以 CircleCI 作為 CI/CD 工具以簡化之後的開發流程，並且順手記錄下來，想像上只要是部署在 GCP 上面的服務應該都通用 XD
 
+## 要解決的問題
+事情是這樣子的，最近因為剛好有一些空閒時間，於是想要在原本部署在 Google App Enginee 的部落格進行排版的調整，並實做一些小功能，然而卻發現以前的開發，部署流程有些繁瑣，剛好工作上有接觸到 CI/CD 的概念，因此想說不如就趁此機會把也把 CI/CD 的實作應用到專案上，最終決定以 CircleCI 作為 CI/CD 工具以簡化之後的開發流程，並且順手記錄下來，想像上只要是部署在 GCP 上面的服務應該都通用 XD
+<!-- more -->
 <br>
 
 ### 導入前的開發部署流程
@@ -56,25 +58,25 @@ cover: 'circleci.PNG'
 ### CircleCI 基本設定
 
 1. 首先到 [CircleCI](https://circleci.com/signup/) 綁定 github 
-    ![](gcp-circleci/setup_1.png)
+    ![](setup_1.png)
 
 2. 綁定後使用選擇 Projects → 對應專案按下 Set Up Project
-    ![](gcp-circleci/setup_2.png)
+    ![](setup_2.png)
 
 3. 接著選擇 Write your own using our starter config.yml template
     
 
 4. 按下按鈕後會自動幫你生成 default 的 config.yml 檔案, 點擊右上方的 Commit and Run 
-    ![](gcp-circleci/setup_3.png)
+    ![](setup_3.png)
     
 5. 這時如果你回到對應的 Github repository 查看你會發現 除了原本的 branch 外，會多出一個 branch `circleci-project-setup`
-    ![](gcp-circleci/setup_4.png)
+    ![](setup_4.png)
     
 6. 而也可以從  CircleCi 的 dashboard 上面看到剛剛成功的執行結果
-    ![](gcp-circleci/setup_5.png)
+    ![](setup_5.png)
     
 7. 點擊 say-hello 可以看到剛剛對應生成 config.yml 所定義的步驟
-    ![](gcp-circleci/setup_6.png)
+    ![](setup_6.png)
 
 如果到這裡都沒有問題，恭喜你，已經順利將 Github repository 綁上 CircleCI  了~
 
@@ -84,19 +86,19 @@ cover: 'circleci.PNG'
 接著我們需要在 Google App Engine 進行一些設定
 
 設定 CircleCI 環境變數
-![](gcp-circleci/gcp_1.png)
+![](gcp_1.png)
 
 點擊 `project setting`
-![](gcp-circleci/gcp_2.png)
+![](gcp_2.png)
 
 而後點擊 `Add Environment Variable`，先停在這頁, 我們先去 GCP 取得這三個變數 XD
-![](gcp-circleci/gcp_3.png)
+![](gcp_3.png)
 
 到 GCP 的 IAM 中，點擊 `服務帳戶`，點擊動作裡的三點圖標，點擊`管理金鑰`
-![](gcp-circleci/gcp_4.png)
+![](gcp_4.png)
 
 點擊建立新的金鑰，並選取 `JSON` 格式
-![](gcp-circleci/gcp_5.png)
+![](gcp_5.png)
 
 這時會到剛剛 CircleCI 環境變數的那頁
 
@@ -108,14 +110,14 @@ cover: 'circleci.PNG'
 GCLOUD_SERVICE_KEY 的值為剛剛我們下載 `JSON` 裡面所有的值，請直接將整個 `JSON` 的內容複製貼上~
 
 最後到 GCP 中啟用服務 `APP Engine Admin API`
-![](gcp-circleci/gcp_7.png)
+![](gcp_7.png)
 
 ### 在專案中新增對應設定檔
 
 接著到專案的根目錄中去添加 CircleCI 的設定檔案 `config.yml` <br/>
-![](gcp-circleci/deploy_1.png)
+![](deploy_1.png)
 
-```
+```yaml
 version: 2.1
 jobs:
   build_and_deploy:     
@@ -162,23 +164,23 @@ $ git push origin circleci-project-setup
 到 Github 中發 Pull Reuqest 到 master branch
 
 此時應該會看到以下畫面
-![](gcp-circleci/deploy_2.png)
+![](deploy_2.png)
 
 這時可以回到 CircleCI 利用對應的 Commit 編號去看對應的 Log
-![](gcp-circleci/deploy_3.png)
+![](deploy_3.png)
 
 對應執行的指令
-![](gcp-circleci/deploy_4.png)
+![](deploy_4.png)
 
 這時再回到 GCP 上面就可以看到成功部署拉～
-![](gcp-circleci/deploy_5.png)
+![](deploy_5.png)
 
 ## 部署優化 (optional)
 剛剛我們已經成功地將網站透過 CircleCI 部署上 GCP 了, 但是有沒有地方可以做得更好呢？
 其實是有的，我們在建立CircleCI 環境時會利用 virtual environment 去建立環境，而這步驟其實是可以快取的，只要在每次運行前先 `restore_cache` 並在運行結束 `save_cache` 就可以達到快取的功能, 完整的代碼如下。
 
 完整的 `.circle/config.yml`
-```
+```yaml
 version: 2.1
 jobs:
   build_and_deploy:     
@@ -233,9 +235,9 @@ workflows:
 比較一下差異
 
 快取前
-![](gcp-circleci/deploy_6.png)
+![](deploy_6.png)
 快取後
-![](gcp-circleci/deploy_7.png)
+![](deploy_7.png)
 
 
 ## 結論

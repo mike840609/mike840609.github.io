@@ -1,3 +1,4 @@
+---
 title: 2019 淘寶雙十一購物
 author: Mike Tsai
 tags:
@@ -6,8 +7,8 @@ tags:
   - e-commerce
   - Taobao
 categories: []
-cover: gallery/shopping.jpeg
-thumbnail: gallery/shopping.jpeg
+cover: gallery/cover/shopping.jpeg
+thumbnail: gallery/cover/shopping.jpeg
 date: 2019-11-11 15:58:00
 ---
 # 2019 淘寶雙十一購物
