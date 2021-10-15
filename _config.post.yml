@@ -1,0 +1,68 @@
+# _config.post.yml will overwrite the root property
+widgets:
+    # Profile widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: profile
+        # Author name
+        author: Mike Tsai
+        # Author title
+        author_title: Software Engineer
+        # Author's current location
+        location: Taipei
+        # URL or path to the avatar image
+        avatar: https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/11/16/12/homer-simpson.jpeg?w968
+        # Whether show the rounded avatar image
+        avatar_rounded: false
+        # Email address for the Gravatar
+        gravatar: 
+        # URL or path for the follow button
+        # follow_link: 'https://github.com/ppoffice'
+        # Links to be shown on the bottom of the profile widget
+        social_links:
+            Linkedin:
+                icon: fab fa-linkedin
+                url: 'https://www.linkedin.com/in/mike840609/'
+            Github:
+                icon: fab fa-github
+                url: 'https://github.com/mike840609'
+            Facebook:
+                icon: fab fa-facebook
+                url: 'https://www.facebook.com/mike840609'
+            Twitter:
+                icon: fab fa-twitter
+                url: 'https://twitter.com/mike840609'
+            Telegram:
+                icon: fab fa-telegram
+                url: 'https://t.me/mike840609'
+                
+    # Table of contents widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: toc
+        # Whether to show the index of each heading
+        index: true
+        # Whether to collapse sub-headings when they are out-of-view
+        collapsed: true
+        # Maximum level of headings to show (1-6)
+        depth: 4
+    -
+        type: categories
+        position: left
+    -
+        type: archives
+        position: left
+    # -
+    #     type: recent_posts
+    #     position: left
+    # -
+    #     type: tags
+    #     position: left
+
+sidebar:
+    # Left sidebar configurations
+    left:
+        # Whether the sidebar sticks to the top when page scrolls
+        sticky: true
