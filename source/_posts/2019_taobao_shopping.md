@@ -8,8 +8,8 @@ tags:
   - Taobao
 categories: []
 keywords: Keywords, taobao, shopping, iphone, alibaba, china, 雙11
-cover: gallery/cover/shopping.jpeg
-thumbnail: gallery/cover/shopping.jpeg
+cover: gallery/cover/shopping.webp
+thumbnail: gallery/cover/shopping.webp
 date: 2019-11-11 15:58:00
 ---
 # 2019 淘寶雙十一購物

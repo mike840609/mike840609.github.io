@@ -29,11 +29,14 @@ def bubble_sort(nums):
             if nums[i] < nums[j]:
                 nums[i] , nums[j] = nums[j], nums[i]
 ```
+
+<!--more-->
+
 GIF
 ![link text](https://thepracticaldev.s3.amazonaws.com/i/m4zwhvxf6ujdrvt9xoq5.gif)
 > 圖片來源： https://wangonya.com/blog/js-sort-1/
 
-<!--more-->
+
 ---
 ### Insertion Sort
 
