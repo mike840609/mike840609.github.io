@@ -1,7 +1,6 @@
 ---
 title: 使用 CircleCI 完成 Google App Engine 自動部署
 toc: true
-disqusId: some-disqus-id
 date: 2021-10-15 10:35:15
 tags: 
   - GCP
