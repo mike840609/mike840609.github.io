@@ -16,13 +16,17 @@ tags:
 disqusId: ctsai_1634542899
 keywords: zsh, iterm2, mac, macos, homebrew, vscode
 date: 2021-10-18 15:39:18
-categories: []
+categories: 
+  - Note
 cover: gallery/cover/cover_mac_iterm2_homebrew_zsh_config.jpg
 thumbnail: gallery/cover/cover_mac_iterm2_homebrew_zsh_config.jpg
-excerpt: 簡單花 10 分鐘打造好用 mac terminal 設定
+excerpt: 簡單花 10 分鐘打造好用 mac terminal 設定, 最近因為有電腦重新設定的需求, 而重灌或是使用新電腦的第一件事情通常都會是安裝 terminal 環境, 於是就順手紀錄一下 homebrew, iterm2, zsh 的設定步驟,順便附上 vscode 需要進行對應的設定步驟～
 ---
 
-最近因為有電腦重新設定的需求, 而重灌或是使用新電腦的第一件事情通常都會是安裝 terminal 環境, 於是就順手紀錄一下 homebrew, iterm2, zsh 的設定步驟 ～
+簡單花 10 分鐘打造好用 mac terminal 設定
+最近因為有電腦重新設定的需求, 而重灌或是使用新電腦的第一件事情通常都會是安裝 terminal 環境, 於是就順手紀錄一下 homebrew, iterm2, zsh 的設定步驟,順便附上 vscode 需要進行對應的設定步驟～
+
+<!-- more -->
 
 ## 安裝還境:
 - MacOS: Big Sur (11.4)

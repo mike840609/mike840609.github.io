@@ -11,7 +11,7 @@ tags:
   - Google App Engine
   - MySQL
 toc: true
-categories: []
+categories: [Life]
 keywords: Keywords, 部落格, Django, 當兵, 畢業, Yahoo, 新鮮人
 # cover: "https://i.imgur.com/x84rxps.jpg"
 # thumbnail: "https://i.imgur.com/x84rxps.jpg"

@@ -6,7 +6,7 @@ tags:
   - EC
   - e-commerce
   - Taobao
-categories: []
+categories: [Life]
 keywords: Keywords, taobao, shopping, iphone, alibaba, china, 雙11
 cover: gallery/cover/shopping.webp
 thumbnail: gallery/cover/shopping.webp

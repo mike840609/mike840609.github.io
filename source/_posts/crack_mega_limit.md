@@ -10,7 +10,7 @@ tags:
   - Tool
   - Api
   - Hack
-categories: []
+categories: [Tutorial]
 keywords: Keywords, Mega, 破解, 限制, 流量
 cover: 'gallery/cover/mega.jpeg'
 thumbnail: 'gallery/cover/mega.jpeg'

@@ -6,7 +6,7 @@ tags:
   - Leetcode
   - Sort
   - Algorithm
-categories: []
+categories: [Note]
 date: 2019-11-20 15:44:00
 keywords: Keywords, sort, sorting, 演算法, Algorithms, 筆記, Note
 cover: >-
