@@ -13,7 +13,7 @@ tags:
   - Python
   - CICD
 
-keywords: Keywords, CGP, CI/CD, Django, Python, 自動部署, CircleCI, Google App Engine, 教學, 筆記, Note
+keywords: CGP, CI/CD, Django, Python, 自動部署, CircleCI, Google App Engine, 教學, 筆記, Note
 categories: [Note] 
 cover: 'gallery/cover/gcp_circleci.png'
 thumbnail: 'gallery/thumbnail/gcp_circleci.png'
