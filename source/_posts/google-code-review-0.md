@@ -15,12 +15,16 @@ categories: [Note]
 cover: 'gallery/cover/john-schnobrich-2FPjlAyMQTA-unsplash.jpg'
 thumbnail: 'gallery/cover/john-schnobrich-2FPjlAyMQTA-unsplash.jpg'
 ---
-此篇為 Google Code Review Overview 的介紹, 主要擷取自 [Google Code Review Guideline](https://google.github.io/eng-practices/review/) 的內容, 後續會陸續分為 Reviewer 以及 Author 兩部分文章紀錄，若內容有誤歡迎大大們指正，感激不盡 
+此篇為 Google Code Review Overview 的介紹, 主要擷取自 [Google Code Review Guideline](https://google.github.io/eng-practices/review/) 的內容, 後續會陸續分為 Reviewer 以及 Author 兩部分文章紀錄，若內容有誤歡迎大大們指正，感激不盡 d(`･∀･)b
 
 <!--more-->
 
 # 介紹
-大家都知道會隨著時間的健康度下降，為了避免這種問題 
+![](code-quality.png)
+*reference: https://blog.claudiupersoiu.ro/2011/10/04/code-quality-and-development-time/lang/en/*
+
+大家都知道開發系統時系統的 code quality 以及健康度會隨著時間下降，為了避免這種問題 code review 就顯得非常重要，藉由多一些人把關檢查來提升品質，而 Google 也提出了內部的一些 review, author 的準則，以下就簡單整理一下 XD
+
 # 應該要被 Review 的事項
 1. Design: 提交的 code 是否有更好的設計? 設計是否會跟現有系統造成衝突，作法是否符合原本系統的 convention 等等
 2. Functionality: 確認提交的 code 行為符合作者的預期? 行為是否對使用者造成問題等等?
