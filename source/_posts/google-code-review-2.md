@@ -13,8 +13,8 @@ disqusId: google-code-review-2
 keywords: code review, google, note, PR, pull-request, author, guideline
 date: 2021-12-07 11:15:57
 categories: [Note]
-cover: gallery\cover\john-schnobrich-FlPc9_VocJ4-unsplash.jpg
-thumbnail: gallery\cover\john-schnobrich-FlPc9_VocJ4-unsplash.jpg
+cover: gallery/cover/john-schnobrich-FlPc9_VocJ4-unsplash.jpg
+thumbnail: gallery/cover/john-schnobrich-FlPc9_VocJ4-unsplash.jpg
 ---
 如同{% post_link  google-code-review-1 '上篇 Google Code Review - Author 篇' %} 所述，此篇將整理 Reviewer 相關的筆記，因為 Reviewer 相關的內容較多，預計將分為三篇文章來記錄，一樣主要整理自 [Google Code Review Guideline](https://google.github.io/eng-practices/review/) 的內容 ლ(・´ｪ`・ლ)
 
