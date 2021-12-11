@@ -17,14 +17,14 @@ keywords: code review, google, note, PR, pull-request, author, guideline
 date: 2021-12-11 10:18:11
 ---
 
-
 本篇接續{% post_link  google-code-review-2 '上篇 Google Code Review - Author 篇 (1)' %}為 reviewer 相關的第二篇，主要會敘述 code review 中應該要被 review 的事項以及詳細的細節，特殊情況下的應對等等，若有寫錯或是表達不清楚的地方，也請大大們鞭小力一點 (✪ω✪)
 
 <!--more-->
 
 # Design 
 ---
-這部分是最重要的一環，必須確保 CL (PR) 整體的設計沒有問題，包含以下條列事項
+這部分是最重要的一環，必須確保 CL(PR) 整體的設計沒有問題，包含以下條列事項:
+
 1. 此次的變動是否合理? 
 2. codebase 中是否已有相同的 library 可以直接呼叫使用? 
 3. 此次的變化應該修改到共用的 library 中嗎? 
@@ -33,7 +33,7 @@ date: 2021-12-11 10:18:11
 
 # Functionality
 ---
-這部份則是功能性相關的檢查，
+這部份則是功能性相關的檢查
 1. 此次的變更是否符合開發者一開始的意圖?
 2. 這次的修改對 developer 以及 end-users 的影響?
 
@@ -41,7 +41,7 @@ date: 2021-12-11 10:18:11
 
 若牽扯到 UI 的變動，有時候無法直接從 CL (PR) 中看出修改造成的影響，此時可以請 developer Demo 給您看，確保修改合理。
 
-另一類很難被發現的問題像是 parallel programmin, deadlocks, 或是 race conditions 等等所造成的問題也很難在 review 時候被發現，必須多留意
+另一類很難被發現的問題像是 parallel programming, deadlocks, 或是 race conditions 等等所造成的問題也很難在 review 時候被發現，必須多留意
 
 # Complexity
 ---
@@ -135,3 +135,4 @@ Reviewer 應該要求 Developer 在 CL (PR) 中加上對應的測試，包含 un
 
 # 心得
 感謝看到這邊的大大們，這部分的內容比較龐大，原本想說用三篇文章的篇幅來筆記一下 Reviewer 的部分，看起來應該失算了，為了避免文章過長，應該會超過三篇文章 QAQ 
+
