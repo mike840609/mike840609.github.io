@@ -17,7 +17,7 @@ keywords: code review, google, note, PR, pull-request, author, guideline
 date: 2021-12-11 10:18:11
 ---
 
-本篇接續{% post_link  google-code-review-2 '上篇 Google Code Review - Author 篇 (1)' %}為 reviewer 相關的第二篇，主要會敘述 code review 中應該要被 review 的事項以及詳細的細節，特殊情況下的應對等等，若有寫錯或是表達不清楚的地方，也請大大們鞭小力一點 (✪ω✪)
+本篇接續{% post_link  google-code-review-2 '上篇 Google Code Review - Reviewer 篇 (1)' %}為 reviewer 相關的第二篇，主要會敘述 code review 中應該要被 review 的事項以及詳細的細節，特殊情況下的應對等等，若有寫錯或是表達不清楚的地方，也請大大們鞭小力一點 (✪ω✪)
 
 <!--more-->
 

@@ -18,6 +18,4 @@ disqusId: some-disqus-id
 
 keywords: test
 
-# excerpt
-excerpt: test excerpt
 ---
