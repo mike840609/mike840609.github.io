@@ -50,7 +50,7 @@ thumbnail: gallery/cover/christina-wocintechchat-com-OW5KP_Pj85Q-unsplash.jpg
 # Accepting Explanations
 若 reviewer 要求開發者解釋一段不清楚的 code, 通常 developer 會選擇直接重寫讓那段 code 變得比較易讀，有些時候比起整段重寫加一些註解可能會更適當，當然前題是原本的 code 沒有過於複雜。
 
-**若只在 code review tool (類似 Github) 中留下 comment 對未來的 developer 沒有太大的幫助 (除非他跑來翻 (CL)PR )**，應優先考慮讓 code 變得易讀，或是在一些關鍵的地方加上註解。
+**若只在 code review tool (Github) 留下 comment 對未來的 developer 沒有太大的幫助**(除非他跑來翻 PR 看過去的討論串才能知道一些 context)，應優先考慮讓 code 變得易讀，或是在一些關鍵的地方加上註解。
 
 # Conclusion 
 感謝您的收看，這篇主要筆記了 reviewer 的 comments 應該如何撰寫，以及那些東西應該被 comments，接下來就是最後一篇了，會講述一些在 code review 中 comment 的來回應對 :)
