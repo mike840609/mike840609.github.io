@@ -14,12 +14,13 @@ keywords: code review, google, note, PR, pull-request, author, guideline, 翻譯
 date: 2021-12-25 19:23:28
 categories:
   - Note
-cover: gallery/cover/christina-wocintechchat-com-OW5KP_Pj85Q-unsplash.jpg
-thumbnail: gallery/cover/christina-wocintechchat-com-OW5KP_Pj85Q-unsplash.jpg
+cover: gallery/cover/marvin-meyer-SYTO3xs06fU-unsplash.jpg
+thumbnail: gallery/cover/marvin-meyer-SYTO3xs06fU-unsplash.jpg
 ---
 
 code review 中 developer 以及 reviewer 意見不和是常常發生的事情，有時 developer 會不同意 reviewer 的觀點，有時候 developer 會覺得 reviewer 太過嚴格，這時候應該要如何解決呢?  這篇筆記會記錄 google code review 中給出的一些建議 (´◉‿◉｀) 
 
+<!--more-->
 
 # Who is right?
 通常 developer 相比 reviewer 而言會更熟悉自己修改的 code, 若 developer 不同意您的建議，需要跟 developer 釐清，若 developer 是對的必須必須讓他們知道，並關閉提出的問題以及修改建議。
