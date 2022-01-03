@@ -22,10 +22,12 @@ code review 中 developer 以及 reviewer 意見不和是常常發生的事情�
 
 
 # Who is right?
+通常 developer 相比 reviewer 而言會更熟悉自己修改的 code, 若 developer 不同意您的建議，需要跟 developer 釐清，若 developer 是對的必須必須讓他們知道，並關閉提出的問題以及修改建議。
 
+但若您很確定您的評論是正確的，應該詳細解釋讓 developer 知道，並且禮的指出怎麼做可以提升 code quality, 有時候一個建議需要經過幾輪的討論，切記要保持禮貌，並且讓 developer 知道自己提出的意見有被收到，只是有其他更好的建議作法可以採用。
 
 # Upsetting Developers
-
+作為　reviewer 可能會擔心過度嚴格的標準會導致 developer 不開心，有時候確實會使 developer 感到沮喪，但通常只是短暫的，之後 developer 更有可能會感謝您幫他們提高 code quality, 若是出於好意且用詞禮貌的提醒基本上都不會讓 developer 不開心。
 
 # Cleaning It Up Later
 盡量避免之後開另一個 CL 修正一些相關的錯誤，可以的話盡量把在 PR 中被點出的錯誤修正，如果需要修改的範圍太大一定要開另外一個 CL(PR) 來修正的話，一定要記得開一張對應的 Ticket 並且寫好 description 並且 assign 給自己，並且在 Code 中加上對應的 TO-DO comment，才不會問題越滾越多然後都忘記要修正 ( •́ω•̩̥̀ )
