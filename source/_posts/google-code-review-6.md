@@ -54,3 +54,5 @@ thumbnail: gallery/cover/christina-wocintechchat-com-OW5KP_Pj85Q-unsplash.jpg
 
 # Conclusion 
 感謝您的收看，這篇主要筆記了 reviewer 的 comments 應該如何撰寫，以及那些東西應該被 comments，接下來就是最後一篇了，會講述一些在 code review 中 comment 的來回應對 :)
+
+[歡迎點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)

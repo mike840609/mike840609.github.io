@@ -43,3 +43,5 @@ thumbnail: 'gallery/cover/john-schnobrich-2FPjlAyMQTA-unsplash.jpg'
 
 ## Conclusion 
 感謝您的收看, 此篇為較粗略的介紹, 將在後續文章詳述細節的部份 (つ´ω`)つ
+
+[歡迎點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)

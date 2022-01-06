@@ -145,6 +145,7 @@ Small CL that needs some context Example:
 
 感謝您的收看，下一篇預計會寫 Reviwer 需要著要的重點整理筆記。
 
+[歡迎點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)
 
 # Reference 
 - https://google.github.io/eng-practices/

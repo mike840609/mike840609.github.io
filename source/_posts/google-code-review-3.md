@@ -136,3 +136,5 @@ Reviewer 應該要求 Developer 在 CL (PR) 中加上對應的測試，包含 un
 # 心得
 感謝看到這邊的大大們，這部分的內容比較龐大，原本想說用三篇文章的篇幅來筆記一下 Reviewer 的部分，看起來應該失算了，為了避免文章過長，應該會超過三篇文章 QAQ 
 
+
+[歡迎點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)

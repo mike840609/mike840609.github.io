@@ -42,4 +42,5 @@ code review 中 developer 以及 reviewer 意見不和是常常發生的事情�
 若遵照上面提出的準則還是無法解決，請參閱{% post_link  google-code-review-2 'The Standard of Code Review' %}解決衝突。
 
 # Conclusion 
-感謝您的收看，到目前為止為 google code review 的完整筆記, overview 1 篇, author(developer) 1篇, reviewer 5 篇，可以點擊這邊瀏覽 google code review guideline 全系列文章 。
+感謝您的收看，到目前為止為 google code review 的完整筆記, overview 1 篇, author(developer) 1篇, reviewer 5 篇，[歡迎點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)
+

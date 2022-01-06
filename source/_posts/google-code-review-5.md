@@ -74,3 +74,4 @@ code review 速度很慢的話可能會引發的問題
 
 # Conclusion
 感謝您的收看，此為第六篇 google code review 的筆記，應該還剩下最後兩篇 XD，下一篇將會講述 Review Comments 應該如何撰寫~
+[可以點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)

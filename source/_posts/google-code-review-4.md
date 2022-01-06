@@ -52,3 +52,4 @@ date: 2021-12-14 00:37:31
 
 # Step Three: Look through the rest of the CL in an appropriate sequence
 當確認設計沒有問題且完成了主要部分的 review 後，接續進行剩餘檔案的 review，請確保您的對改動部分完全理解，有時候也可以從 test 下手，先看 test 的測項對於 review 也有一定的幫助，可以從 test 中去推斷功能的預期的邏輯為何。
+[歡迎點擊這邊 Google Code Review 全系列筆記瀏覽 code review guideline 全系列筆記文章 :)](/collections)
