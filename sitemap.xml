@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ctsai.dev/20230909/TEST-CI-CD/</loc>
-    
-    <lastmod>2023-09-08</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ctsai.dev/20200802/vepsa_note_1/</loc>
     
     <lastmod>2023-09-08</lastmod>
@@ -135,14 +128,14 @@
   </url>
   
   <url>
-    <loc>https://ctsai.dev/20211013/crack_mega_limit/</loc>
+    <loc>https://ctsai.dev/20211015/gcp-circleci/</loc>
     
     <lastmod>2023-09-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ctsai.dev/20211015/gcp-circleci/</loc>
+    <loc>https://ctsai.dev/20211013/crack_mega_limit/</loc>
     
     <lastmod>2023-09-08</lastmod>
     
@@ -200,13 +193,6 @@
   </url>
   
   <url>
-    <loc>https://ctsai.dev/tags/test/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ctsai.dev/tags/Blog/</loc>
     <lastmod>2023-09-08</lastmod>
     <changefreq>daily</changefreq>
@@ -257,55 +243,6 @@
   
   <url>
     <loc>https://ctsai.dev/tags/MySQL/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Java/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Mega/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Limit/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Downloader/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Tool/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Api/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/tags/Hack/</loc>
     <lastmod>2023-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -390,6 +327,55 @@
   
   <url>
     <loc>https://ctsai.dev/tags/%E7%BF%BB%E8%AD%AF/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Java/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Mega/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Limit/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Downloader/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Tool/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Api/</loc>
+    <lastmod>2023-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ctsai.dev/tags/Hack/</loc>
     <lastmod>2023-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -573,7 +559,7 @@
   </url>
   
   <url>
-    <loc>https://ctsai.dev/categories/test/</loc>
+    <loc>https://ctsai.dev/categories/Note/</loc>
     <lastmod>2023-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -581,13 +567,6 @@
   
   <url>
     <loc>https://ctsai.dev/categories/Tutorial/</loc>
-    <lastmod>2023-09-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ctsai.dev/categories/Note/</loc>
     <lastmod>2023-09-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
