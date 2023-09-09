@@ -3,14 +3,14 @@ title: 使用 CircleCI 完成 Google App Engine 自動部署
 toc: true
 date: 2021-10-15 10:35:15
 tags: 
-  - GCP
-  - Google Cloud Platform
-  - Google App Engine
-  - CircleCI
-  - DevOps
-  - Software
-  - Django
-  - Python
+  - gcp
+  - google cloud platform
+  - google app engine
+  - circleci
+  - devops
+  - software
+  - django
+  - python
   - CI/CD
 
 keywords: CGP, CI/CD, Django, Python, 自動部署, CircleCI, Google App Engine, 教學, 筆記, Note
