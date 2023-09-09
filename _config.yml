@@ -109,7 +109,9 @@ theme: icarus
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/mike840609/mike840609.github.io
+  branch: gh-pages
 
 
 # Sitemap for SEO
