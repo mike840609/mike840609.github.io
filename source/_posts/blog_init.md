@@ -2,14 +2,14 @@
 title: ' 部落格的誕生'
 author: Mike Tsai
 tags:
-  - Blog
-  - Django
-  - Python
-  - GCP
-  - GAE
-  - Google Cloud Platform
-  - Google App Engine
-  - MySQL
+  - blog
+  - django
+  - python
+  - gcp
+  - gae
+  - google cloud platform
+  - google app engine
+  - mysql
 toc: true
 categories: [Life]
 keywords: Keywords, 部落格, Django, 當兵, 畢業, Yahoo, 新鮮人

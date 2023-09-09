@@ -7,9 +7,8 @@ tags:
   - code-review
   - pull-request
   - github
-  - PR
+  - pr
   - translation
-  - 翻譯
 disqusId: google-code-review-5
 keywords:  code review, google, note, PR, pull-request, author, guideline, 翻譯, 筆記
 date: 2021-12-14 00:41:28

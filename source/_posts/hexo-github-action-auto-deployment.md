@@ -3,6 +3,9 @@ title: hexo_github_action_auto_deployment
 toc: true
 tags:
   - CI/CD
+  - github action
+  - git
+  - hexo
 categories:
   - Tutorial
 cover: gallery/cover/hexo-github-action-auto-deployment.png

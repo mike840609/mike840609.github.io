@@ -3,13 +3,13 @@ title: 解除 Mega 單日流量限制
 author: Mike Tsai
 toc: true
 tags:
-  - Java
-  - Mega
-  - Limit
-  - Downloader
-  - Tool
-  - Api
-  - Hack
+  - hava
+  - mega
+  - limit
+  - downloader
+  - tool
+  - api
+  - hack
 categories: [Tutorial]
 keywords: Keywords, Mega, 破解, 限制, 流量
 cover: 'gallery/cover/mega.jpeg'

@@ -2,12 +2,12 @@
 title: Vespa ai 筆記 (一)
 author: Mike Tsai
 tags:
-  - Vespa
-  - Yahoo
-  - Opensource
-  - Search engine
-  - Real time
-  - Java
+  - vespa
+  - yahoo
+  - opensource
+  - search engine
+  - realtime
+  - java
 toc: true
 keywords: Keywords, Vespa, Search Engine, Elastic, Elastic Search, Note, 筆記, Yahoo
 cover: >-

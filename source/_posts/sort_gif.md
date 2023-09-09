@@ -3,9 +3,9 @@ title: 解題常用排序演算法 (附上動圖)
 author: Mike Tsai
 toc: true
 tags:
-  - Leetcode
-  - Sort
-  - Algorithm
+  - leetcode
+  - sort
+  - algorithm
 categories: [Note]
 date: 2019-11-20 15:44:00
 keywords: Keywords, sort, sorting, 演算法, Algorithms, 筆記, Note

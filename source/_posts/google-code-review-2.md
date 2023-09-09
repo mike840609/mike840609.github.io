@@ -7,7 +7,7 @@ tags:
   - code-review
   - pull-request
   - github
-  - PR
+  - pr
    
 disqusId: google-code-review-2
 keywords: code review, google, note, PR, pull-request, author, guideline

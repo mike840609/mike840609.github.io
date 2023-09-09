@@ -7,7 +7,7 @@ tags:
   - code-review
   - pull-request
   - github
-  - PR
+  - pr
 categories:
   - Note
 cover: gallery/cover/fatos-bytyqi-Agx5_TLsIf4-unsplash.jpg

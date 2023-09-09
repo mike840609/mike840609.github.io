@@ -7,7 +7,7 @@ tags:
   - code-review
   - pull-request
   - github
-  - PR
+  - pr
 categories:
   - Note
 cover: gallery/cover/lala-azizli-cBUTPbTeDB0-unsplash.jpg

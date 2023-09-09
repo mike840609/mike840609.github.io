@@ -11,7 +11,7 @@ tags:
   - Software
   - Django
   - Python
-  - CICD
+  - CI/CD
 
 keywords: CGP, CI/CD, Django, Python, 自動部署, CircleCI, Google App Engine, 教學, 筆記, Note
 categories: [Note] 

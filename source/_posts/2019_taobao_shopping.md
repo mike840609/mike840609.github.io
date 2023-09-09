@@ -2,10 +2,10 @@
 title: 2019 淘寶雙十一購物
 author: Mike Tsai
 tags:
-  - Shopping
-  - EC
+  - shopping
+  - ev
   - e-commerce
-  - Taobao
+  - taobao
 categories: [Life]
 keywords: Keywords, taobao, shopping, iphone, alibaba, china, 雙11
 cover: gallery/cover/shopping.webp
