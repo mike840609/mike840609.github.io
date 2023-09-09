@@ -106,12 +106,12 @@ ignore:
 # theme: landscape
 theme: icarus
 
-# Deployment
+# Deployment (use github action instead)
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/mike840609/mike840609.github.io
-  branch: gh-pages
+# deploy:
+#   type: git
+#   repo: https://github.com/mike840609/mike840609.github.io
+#   branch: gh-pages-2
 
 
 # Sitemap for SEO
