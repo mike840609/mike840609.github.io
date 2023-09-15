@@ -1,5 +1,5 @@
 ---
-title: hexo_github_action_auto_deployment
+title: 利用 github action 實現 hexo CI/CD 自動部署
 toc: true
 tags:
   - CI/CD
