@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>System Design - Twitter - ctsai&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="ctsai&#039;s Blog"><meta name="msapplication-TileImage" content="img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ctsai&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="用於紀錄生活, 筆記, 工作問題以及一些瑣碎雜事的部落格~"><meta property="og:type" content="blog"><meta property="og:title" content="ctsai&#039;s Blog"><meta property="og:url" content="https://ctsai.dev/20220109/system-design-1/"><meta property="og:site_name" content="ctsai&#039;s blog"><meta property="og:description" content="用於紀錄生活, 筆記, 工作問題以及一些瑣碎雜事的部落格~"><meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://ctsai.dev/20220109/system-design-1/img/favicon.ico"><meta property="article:published_time" content="2022-01-09T10:23:31.000Z"><meta property="article:modified_time" content="2023-09-15T12:24:53.943Z"><meta property="article:author" content="Mike Tsai"><meta property="article:tag" content="筆記"><meta property="article:tag" content="twitter"><meta property="article:tag" content="system design"><meta property="article:tag" content="interview"><meta property="article:tag" content="note"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="img/favicon.ico"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ctsai.dev/20220109/system-design-1/"},"headline":"System Design - Twitter","image":["https://ctsai.dev/gallery/cover/nathan-dumlao-4FHF4kCnj8A-unsplash.jpg"],"datePublished":"2022-01-09T10:23:31.000Z","dateModified":"2023-09-15T12:24:53.943Z","author":{"@type":"Person","name":"Mike Tsai"},"publisher":{"@type":"Organization","name":"ctsai's Blog","logo":{"@type":"ImageObject","url":{"text":"ctsai's Blog"}}},"description":"本篇文章為針對 花花醬 Youtebe 所講述的內容進行筆記，一切都還是以影片中的內容為主，會知道此頻道是因為在碩班畢業前，找工作刷題時在網路上搜尋解題講解時所發現。 最近因緣際會下發現除了 leetcode 演算法外，頻道內也開始有一些系統設計相關的內容，內容都講得非常好且多半都配合圖解來模擬運行時的邏輯，有需要的大大們可以去上面挖寶 XD"}</script><link rel="canonical" href="https://ctsai.dev/20220109/system-design-1/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-0F4HHW775E" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-0F4HHW775E');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.2"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ctsai&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/collections">Collections</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;" rel="external nofollow noreferrer"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;" rel="external nofollow noreferrer"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/gallery/cover/nathan-dumlao-4FHF4kCnj8A-unsplash.jpg" alt="System Design - Twitter"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-01-09T10:23:31.000Z" title="1/9/2022, 10:23:31 AM">2022-01-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2023-09-15T12:24:53.943Z" title="9/15/2023, 12:24:53 PM">2023-09-15</time></span><span class="level-item"><a class="link-muted" href="/categories/Note/">Note</a></span><span class="level-item">9 分鐘 read (About 1310 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">System Design - Twitter</h1><div class="content"><p>本篇文章為針對 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.youtube.com/c/HuaHuaLeetCode/videos">花花醬 Youtebe</a> 所講述的內容進行筆記，一切都還是以影片中的內容為主，會知道此頻道是因為在碩班畢業前，找工作刷題時在網路上搜尋解題講解時所發現。</p>
+<p>最近因緣際會下發現除了 leetcode 演算法外，頻道內也開始有一些系統設計相關的內容，內容都講得非常好且多半都配合圖解來模擬運行時的邏輯，有需要的大大們可以去上面挖寶 XD</p>
+<span id="more"></span>
+
+<h2 id="Interview-Signals"><a href="#Interview-Signals" class="headerlink" title="Interview Signals"></a>Interview Signals</h2><hr>
+<ol>
+<li>Work Solution </li>
+<li>Analysis and communication </li>
+<li>Tradeoff Pros/Cons</li>
+<li>Knowledge Base </li>
+</ol>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><hr>
+<ol>
+<li>Clarify the requirements</li>
+<li>Capacity Estimation </li>
+<li>System APIs</li>
+<li>High-level System Design</li>
+<li>Data Storage</li>
+<li>Scalability</li>
+</ol>
+<h2 id="1-Clarify-the-requirement-系統規模"><a href="#1-Clarify-the-requirement-系統規模" class="headerlink" title="1. Clarify the requirement (系統規模)"></a>1. Clarify the requirement (系統規模)</h2><hr>
+<ul>
+<li>Requirements</li>
+<li>Traffic size</li>
+<li>Nobody expect you to design a complete system in 30-45 mins</li>
+</ul>
+<p>Discuss the functionnalities, align with interviewers on components to focus.</p>
+<h3 id="Type-1-Functional-Requirement"><a href="#Type-1-Functional-Requirement" class="headerlink" title="Type 1 : Functional Requirement"></a>Type 1 : Functional Requirement</h3><p><img src="/20220109/system-design-1/Untitled.png"></p>
+<h3 id="Type-2-Non-Functional-Requirement"><a href="#Type-2-Non-Functional-Requirement" class="headerlink" title="Type 2 : Non-Functional Requirement"></a>Type 2 : Non-Functional Requirement</h3><p><img src="/20220109/system-design-1/Untitled_1.png"></p>
+<h2 id="2-Capacity-Estimation-規模估算"><a href="#2-Capacity-Estimation-規模估算" class="headerlink" title="2. Capacity Estimation (規模估算)"></a>2. Capacity Estimation (規模估算)</h2><hr>
+<p><img src="/20220109/system-design-1/Untitled_2.png"></p>
+<h3 id="Storage-Estimate"><a href="#Storage-Estimate" class="headerlink" title="Storage Estimate"></a>Storage Estimate</h3><p><img src="/20220109/system-design-1/Untitled_3.png"></p>
+<h3 id="Bandwidth-Estimate"><a href="#Bandwidth-Estimate" class="headerlink" title="Bandwidth Estimate"></a>Bandwidth Estimate</h3><p><img src="/20220109/system-design-1/Untitled_4.png" alt="藉由 Bandwidth 分析可以找出 bottleneck, 進而改善 scalability"></p>
+<p>藉由 Bandwidth 分析可以找出 bottleneck, 進而改善 scalability</p>
+<h2 id="3-System-APIs"><a href="#3-System-APIs" class="headerlink" title="3. System APIs"></a>3. System APIs</h2><hr>
+<p><img src="/20220109/system-design-1/Untitled_5.png"></p>
+<ul>
+<li>pageSize 用於判斷手機或是電腦螢幕大小，藉以返回對應需要的 tweets 數量，藉以節省 bandwidth, 或者優化用戶體驗。</li>
+<li>pageToken 用來實現翻頁的功能</li>
+</ul>
+<h2 id="4-High-level-System-Design"><a href="#4-High-level-System-Design" class="headerlink" title="4. High-level System Design"></a>4. High-level System Design</h2><hr>
+<h3 id="User-TimeLine"><a href="#User-TimeLine" class="headerlink" title="User TimeLine"></a>User TimeLine</h3><p><img src="/20220109/system-design-1/Untitled_6.png"></p>
+<p>User create tweets 時 應該考慮把追蹤人數多的用戶(Elon musk)的 tweets 寫入 Cache</p>
+<h3 id="Home-Timeline"><a href="#Home-Timeline" class="headerlink" title="Home Timeline"></a>Home Timeline</h3><p><img src="/20220109/system-design-1/Untitled_7.png"></p>
+<p>避免 TimeLine 需要每次計算，可在 cache 中預先存好每次要展示給用戶看的 Timeline</p>
+<p>何時應該更新用戶看到的 Home Timeline? </p>
+<p>用戶發布 Tweet 時候來更新，Tweet Writer 儲存 Tweet 時一併更新 followers 在 cache 中的 Timeline Cache.</p>
+<h3 id="Home-Timeline-Naive-Pull"><a href="#Home-Timeline-Naive-Pull" class="headerlink" title="Home Timeline (Naive) (Pull)"></a>Home Timeline (Naive) (Pull)</h3><p><img src="/20220109/system-design-1/Untitled_8.png"></p>
+<h3 id="Home-Timeline-fan-out-on-write-Push"><a href="#Home-Timeline-fan-out-on-write-Push" class="headerlink" title="Home Timeline (fan out on write) (Push)"></a>Home Timeline (fan out on write) (Push)</h3><p><img src="/20220109/system-design-1/Untitled_9.png"></p>
+<p>由於 write latency 對用戶而言比較不重要，可使用 async 方式慢慢做, 每個 follower 被更新的時間並不是那麼重要。</p>
+<h3 id="Home-Timeline-fan-out-on-write-cont’d"><a href="#Home-Timeline-fan-out-on-write-cont’d" class="headerlink" title="Home Timeline (fan out on write) (cont’d)"></a>Home Timeline (fan out on write) (cont’d)</h3><p><img src="/20220109/system-design-1/Untitled_10.png"></p>
+<p>Fan out 方式有哪些侷限性?</p>
+<p>舉例而言 Taylor swift 可能有 87.8 million followers, 若使用 fan out 的方式則會導致需要一次更新87.8 million 筆資料, 然而某些可能是 inactive user, 某些可能是假帳號, 對於粉絲數量大於 10k 的使用者使用 fan out 的方式顯然效率會不好。</p>
+<p>使用 Hybrid 方式作為解法:</p>
+<ul>
+<li>Non-hot users<ul>
+<li>fan out on write (push).</li>
+<li>do not fanout  on non-active uses.</li>
+</ul>
+</li>
+<li>Hot users<ul>
+<li>fan in on read (pull): read during timeline request from tweets cache, and aggregate with results from non-hot users.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-Data-Storage"><a href="#5-Data-Storage" class="headerlink" title="5. Data Storage"></a>5. Data Storage</h2><hr>
+<h3 id="SQL-Table"><a href="#SQL-Table" class="headerlink" title="SQL Table"></a>SQL Table</h3><p><img src="/20220109/system-design-1/Untitled_11.png"></p>
+<h3 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h3><p><img src="/20220109/system-design-1/Untitled_12.png"></p>
+<h2 id="6-Scalability"><a href="#6-Scalability" class="headerlink" title="6. Scalability"></a>6. Scalability</h2><hr>
+<ol>
+<li>找出 bottlenecks </li>
+<li>探討解法，以及每個解法的 trade-off</li>
+</ol>
+<ul>
+<li>Data Sharding : 如何把 data store 在不同的 server 上, 使得 read 時可以更 stable</li>
+<li>Load Balancing: 大量的用戶 request 如何把它 assign 到不同的 server 上, 使得每個 server 的負載達到平衡。包含 user 跟 application 之間，以及 application server 跟 cache server 之間抑或是 application server 跟 database  之間。</li>
+<li>Data Caching: 解決 read haevy 問題。</li>
+</ul>
+<h3 id="Data-sharding"><a href="#Data-sharding" class="headerlink" title="Data sharding"></a>Data sharding</h3><p><img src="/20220109/system-design-1/Untitled_13.png"></p>
+<p>由於資料量過大，全部存在一章表是不可行的，應該將其切成一個一個的小塊(shard), 可以把一個個的 shard 存儲在不同的服務器上面，藉此解決 horizontal scaling 問題，只要機器增加的速度大於 tweet 產生的速度，則理論上可以無限地擴展下去。</p>
+<h3 id="Data-Sharding-Shard-by-creation-Time"><a href="#Data-Sharding-Shard-by-creation-Time" class="headerlink" title="Data Sharding (Shard by creation Time)"></a>Data Sharding (Shard by creation Time)</h3><p><img src="/20220109/system-design-1/Untitled_14.png"></p>
+<p>利用 timestamp 進行 shard </p>
+<ul>
+<li>Pros<ul>
+<li>可以簡易的用時間得到 tweet 的儲存位置, 可降低不必要的 task 數量</li>
+</ul>
+</li>
+<li>Cons<ul>
+<li>Hot/Cold data 問題，twitter 很重時效性，最近被創建的 table  tweet read / write 的量會遠大於過去的 tweet 的 table, 時間久遠的 tweet 讀到的機率也會很低 (資源浪費)。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Data-Sharding-Shard-by-hash-userId"><a href="#Data-Sharding-Shard-by-hash-userId" class="headerlink" title="Data Sharding (Shard by hash userId)"></a>Data Sharding (Shard by hash userId)</h3><p><img src="/20220109/system-design-1/Untitled_15.png"></p>
+<p>利用 userId 進行 hash 並取 mod，最後儲存到對應的 shard</p>
+<ul>
+<li>Pros<ul>
+<li>簡單</li>
+<li>一個用戶的數據都儲存在同一個 shard。</li>
+</ul>
+</li>
+<li>Cons<ul>
+<li>Home tineline 還是要 query 很多的 shard.</li>
+<li>有可能有數據太大沒有辦法放進一個 shard 的情況。</li>
+<li>Hot user 導致該 shard 會負載太重，會間接影響 availablity.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Data-Sharding-Shard-by-hash-tweetId"><a href="#Data-Sharding-Shard-by-hash-tweetId" class="headerlink" title="Data Sharding (Shard by hash tweetId)"></a>Data Sharding (Shard by hash tweetId)</h3><p>![](Untitled 16.png)</p>
+<p>利用 tweet id 進行 shard </p>
+<ul>
+<li>Pros<ul>
+<li>即便是 hot user, 還是會因為 tweetId 的緣故平均分配到不同的 shard.</li>
+<li>高可用性</li>
+</ul>
+</li>
+<li>Cons<ul>
+<li>generate user/home timeline 時候一樣需要 query all shard (可以透過 cache 來解)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Caching"><a href="#Caching" class="headerlink" title="Caching"></a>Caching</h3><p><img src="/20220109/system-design-1/Untitled_17.png" alt="Untitled"></p>
+<p>由於 social network application 的特性， heavy read traffic, 要產生像是 home timeline 這種頁面因為要大量的 query 會比較慢，因此使用 cache 來解決，將 hot query 儲存在 cache 中，避免大量的對 DB 進行 hit。</p>
+<p>cache 中存甚麼?</p>
+<ol>
+<li>key: userId,  value : tweets id list </li>
+<li>只需要存最近的幾千條, 其他放 DB</li>
+<li>tweetId → tweet content 的 mapping table </li>
+</ol>
+<p>Topic </p>
+<ul>
+<li>應該使用 LRU, LFU 抑或是其他的 caching policy ?</li>
+<li>cahce 應該如何做 sharding</li>
+<li>capacity 以及 performance</li>
+</ul>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
+<p>更完整的設計細節可以參考這個 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README-zh-Hans.md">Repository</a> ，當中有許多經典面試題目:)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><hr>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.youtube.com/channel/UC5xDNEcvb1vgw3lE21Ack2Q">https://www.youtube.com/channel/UC5xDNEcvb1vgw3lE21Ack2Q</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README-zh-Hans.md">https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README-zh-Hans.md</a></li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>System Design - Twitter</p><p><a href="https://ctsai.dev/20220109/system-design-1/">https://ctsai.dev/20220109/system-design-1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Mike Tsai</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2022-01-09</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2023-09-15</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener external nofollow noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener external nofollow noreferrer" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener external nofollow noreferrer" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AD%86%E8%A8%98/">筆記</a><a class="link-muted mr-2" rel="tag" href="/tags/twitter/">twitter</a><a class="link-muted mr-2" rel="tag" href="/tags/system-design/">system design</a><a class="link-muted mr-2" rel="tag" href="/tags/interview/">interview</a><a class="link-muted mr-2" rel="tag" href="/tags/note/">note</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=61679e7a4eeb7e00131dec5f&amp;product=inline-share-buttons" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="https://www.buymeacoffee.com/mike840609" target="_blank" rel="noopener external nofollow noreferrer" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" data-type="paypal" onclick="document.getElementById(&#039;paypal-donate-form&#039;).submit()"><span class="icon is-small"><i class="fab fa-paypal"></i></span><span>Paypal</span></a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener" id="paypal-donate-form"><input type="hidden" name="cmd" value="_donations"><input type="hidden" name="business" value="M8GPP43EN6ZCU"><input type="hidden" name="currency_code" value="USD"></form><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/img/wechat.JPG" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/20230909/hexo-github-action-auto-deployment/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">利用 github action 實現 hexo CI/CD 自動部署</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/20211225/google-code-review-7/"><span class="level-item">Google Code Review - Reviewer 篇 (6)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://ctsai.dev/20220109/system-design-1/';
+            this.page.identifier = 'system-design-1';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'ctsai-dev' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Interview-Signals"><span class="level-left"><span class="level-item">1</span><span class="level-item">Interview Signals</span></span></a></li><li><a class="level is-mobile" href="#Overview"><span class="level-left"><span class="level-item">2</span><span class="level-item">Overview</span></span></a></li><li><a class="level is-mobile" href="#1-Clarify-the-requirement-系統規模"><span class="level-left"><span class="level-item">3</span><span class="level-item">1. Clarify the requirement (系統規模)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Type-1-Functional-Requirement"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Type 1 : Functional Requirement</span></span></a></li><li><a class="level is-mobile" href="#Type-2-Non-Functional-Requirement"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">Type 2 : Non-Functional Requirement</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-Capacity-Estimation-規模估算"><span class="level-left"><span class="level-item">4</span><span class="level-item">2. Capacity Estimation (規模估算)</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Storage-Estimate"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">Storage Estimate</span></span></a></li><li><a class="level is-mobile" href="#Bandwidth-Estimate"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">Bandwidth Estimate</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-System-APIs"><span class="level-left"><span class="level-item">5</span><span class="level-item">3. System APIs</span></span></a></li><li><a class="level is-mobile" href="#4-High-level-System-Design"><span class="level-left"><span class="level-item">6</span><span class="level-item">4. High-level System Design</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#User-TimeLine"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">User TimeLine</span></span></a></li><li><a class="level is-mobile" href="#Home-Timeline"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">Home Timeline</span></span></a></li><li><a class="level is-mobile" href="#Home-Timeline-Naive-Pull"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">Home Timeline (Naive) (Pull)</span></span></a></li><li><a class="level is-mobile" href="#Home-Timeline-fan-out-on-write-Push"><span class="level-left"><span class="level-item">6.4</span><span class="level-item">Home Timeline (fan out on write) (Push)</span></span></a></li><li><a class="level is-mobile" href="#Home-Timeline-fan-out-on-write-cont’d"><span class="level-left"><span class="level-item">6.5</span><span class="level-item">Home Timeline (fan out on write) (cont’d)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#5-Data-Storage"><span class="level-left"><span class="level-item">7</span><span class="level-item">5. Data Storage</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SQL-Table"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">SQL Table</span></span></a></li><li><a class="level is-mobile" href="#Database"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">Database</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-Scalability"><span class="level-left"><span class="level-item">8</span><span class="level-item">6. Scalability</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Data-sharding"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">Data sharding</span></span></a></li><li><a class="level is-mobile" href="#Data-Sharding-Shard-by-creation-Time"><span class="level-left"><span class="level-item">8.2</span><span class="level-item">Data Sharding (Shard by creation Time)</span></span></a></li><li><a class="level is-mobile" href="#Data-Sharding-Shard-by-hash-userId"><span class="level-left"><span class="level-item">8.3</span><span class="level-item">Data Sharding (Shard by hash userId)</span></span></a></li><li><a class="level is-mobile" href="#Data-Sharding-Shard-by-hash-tweetId"><span class="level-left"><span class="level-item">8.4</span><span class="level-item">Data Sharding (Shard by hash tweetId)</span></span></a></li><li><a class="level is-mobile" href="#Caching"><span class="level-left"><span class="level-item">8.5</span><span class="level-item">Caching</span></span></a></li></ul></li><li><a class="level is-mobile" href="#結論"><span class="level-left"><span class="level-item">9</span><span class="level-item">結論</span></span></a></li><li><a class="level is-mobile" href="#Reference"><span class="level-left"><span class="level-item">10</span><span class="level-item">Reference</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/11/16/12/homer-simpson.jpeg?w968" alt="Mike Tsai"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Mike Tsai</p><p class="is-size-6 is-block">Software Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Taipei</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">19</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">60</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener external nofollow noreferrer" title="Linkedin" href="https://www.linkedin.com/in/mike840609/"><i class="fab fa-linkedin"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener external nofollow noreferrer" title="Github" href="https://github.com/mike840609"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener external nofollow noreferrer" title="Facebook" href="https://www.facebook.com/mike840609"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener external nofollow noreferrer" title="Twitter" href="https://twitter.com/mike840609"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener external nofollow noreferrer" title="Telegram" href="https://t.me/mike840609"><i class="fab fa-telegram"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Design/"><span class="level-start"><span class="level-item">Design</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Life/"><span class="level-start"><span class="level-item">Life</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/Note/"><span class="level-start"><span class="level-item">Note</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/categories/Tutorial/"><span class="level-start"><span class="level-item">Tutorial</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">九月 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ctsai&#039;s Blog</a><p class="is-size-7"><span>&copy; 2023 Mike Tsai</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener external nofollow noreferrer">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener external nofollow noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener external nofollow noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-tw");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="Back to top" href="javascript:;" rel="external nofollow noreferrer"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;" rel="external nofollow noreferrer">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
